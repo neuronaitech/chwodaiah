@@ -14,8 +14,22 @@ plt.xlabel('x-axis')
 plt.ylabel('y-axis')
 plt.title("Simple line plot.")
 plt.plot(x,y,'g*--',label='Nandavari')
-plt.legend(loc='upperrigth')
+plt.legend(loc='upperright')
+plt.annotate('local max',xy=(2,1),xytext=(3,1.5),arrowprops=dict(facecolor='black',shrink=0.05), )
 plt.xlim(1,3)
+plt.show()
+
+
+import matplotlib.pyplot as plt
+math_marks = [88, 92, 80, 89, 100, 80, 60, 100, 80, 34]
+science_marks = [35, 79, 79, 48, 100, 88, 32, 45, 20, 30]
+marks_range = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+plt.scatter(marks_range, math_marks, label='Math marks', color='c')
+plt.scatter(marks_range, science_marks, label='Science marks', color='r')
+plt.title('Scatter Plot')
+plt.xlabel('Marks Range')
+plt.ylabel('Marks Scored')
+plt.legend()
 plt.show()
 
 
@@ -45,11 +59,10 @@ plt.show
 
 
 #python program to load and save image file
-import matplotlib
-matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-plt.plot([1,2,3])
-plt.savefig('myfig')
+fig, ax = plt.subplots( nrows=1, ncols=1 )  # create figure & 1 axis
+ax.plot([0,1,2], [10,20,3])
+fig.savefig('book.jpg')
 
 
 
